@@ -1,4 +1,5 @@
 ﻿using Refactoring_CaloriesCalculator;
+using NUnit.Framework;
 
 namespace TestProject;
 
@@ -35,4 +36,9 @@ public class TestFemalePatient
         Assert.AreEqual(expectedResult, realResult);
     }
 
+    [Test]
+    public void HeigthLessThan5Ft()
+    {
+        Assert.Throws<ArgumentOutOfRangeException>(() => femalePatient.HeightInInches = 59);
+    }
 }
