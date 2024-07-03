@@ -37,6 +37,15 @@ public class TestFemalePatient
     }
 
     [Test]
+    public void TestBodyFatContent()
+    {
+        double expectedResult = 36;
+        double realResult = femalePatient.BodyFatContent();
+
+        Assert.AreEqual(expectedResult, realResult);
+    }
+
+    [Test]
     public void HeigthLessThan5Ft()
     {
         Assert.Throws<ArgumentOutOfRangeException>(() => femalePatient.HeightInInches = 59);

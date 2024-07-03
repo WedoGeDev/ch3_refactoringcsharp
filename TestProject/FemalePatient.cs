@@ -14,5 +14,10 @@
                     + (4.7 * HeightInInches)
                     - 4.7 * Age);
         }
+
+        public double BodyFatContent()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
