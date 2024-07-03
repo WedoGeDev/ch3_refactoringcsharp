@@ -5,14 +5,21 @@ namespace TestProject;
 [TestFixture]
 public class TestFemalePatient
 {
-    [Test]
-    public void TestIdealBodyWeight()
+    private FemalePatient femalePatient;
+
+    [SetUp]
+    public void CreateFemalePatientInstance()
     {
-        var femalePatient = new FemalePatient();
+        femalePatient = new FemalePatient();
+
         femalePatient.HeightInInches = 72;
         femalePatient.WeightInPounds = 110;
         femalePatient.Age = 30;
+    }
 
+    [Test]
+    public void TestIdealBodyWeight()
+    {
         double expectedResult = 161.15626;
         double realResult = femalePatient.IdealBodyWeight();
 
@@ -22,11 +29,6 @@ public class TestFemalePatient
     [Test]
     public void TestDailyCaloriesRecomended()
     {
-        var femalePatient = new FemalePatient();
-        femalePatient.HeightInInches = 72;
-        femalePatient.WeightInPounds = 110;
-        femalePatient.Age = 30;
-
         double expectedResult = 1325.4;
         double realResult = femalePatient.DailyCaloriesRecommended();
 
